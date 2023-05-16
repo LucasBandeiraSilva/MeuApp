@@ -16,6 +16,7 @@ export default function videoScreen() {
       ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE)
     }
     ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.LANDSCAPE)
+    
   },{});
 
   return (
