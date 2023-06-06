@@ -1,7 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View, Pressable } from "react-native";
-
-export default function Resumo({ route, navigation}) {
+export default function Resumo({ route, navigation }) {
   const { desc, professor } = route.params;
 
   const HandleVideo = () => {
@@ -9,13 +8,13 @@ export default function Resumo({ route, navigation}) {
       navigation.navigate("videoScreen")
     }
     else if(desc.includes("Python Basico")){
-      navigation.navigate()
+      navigation.navigate("videoPython")
     }
     else if(desc.includes("FrontEnd Basico")){
-
+      navigation.navigate("videoFront")
     }
     else if(desc.includes("MySql Basico")){
-      
+      navigation.navigate("videoSql")
     }
   };
 
@@ -23,30 +22,35 @@ export default function Resumo({ route, navigation}) {
     <View style={styles.container}>
       <Text style={styles.text}>Descrição do Curso: {desc}</Text>
       <Text style={styles.text}>Professor: {professor}</Text>
-      <Pressable onPress={HandleVideo}>
-        <Text>Assistir o video</Text>
-      </Pressable>
+      <View style={styles.pressableContainer}>
+        <Pressable onPress={HandleVideo} style={styles.pressable}>
+          <Text>Assistir o vídeo</Text>
+        </Pressable>
+      </View>
     </View>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
-    //justifyContent: "center",
-    //alignItems: "center",
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
     paddingTop: 10,
     paddingBottom: 20,
   },
   text: {
     fontSize: 20,
     fontWeight: "bold",
+    alignSelf: "center",
   },
-  desc: {
+  pressableContainer: {
     justifyContent: "center",
     alignItems: "center",
+    marginTop: 20,
   },
-  image: {
-    width: 200,
-    height: 200,
-    marginBottom: 10,
+  pressable: {
+    backgroundColor: "lightblue",
+    padding: 10,
   },
 });

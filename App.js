@@ -7,6 +7,8 @@ import cadastro from "./src/pages/cadastro";
 import curso from "./src/pages/curso";
 import videoScreen from "./src/pages/video";
 import videoPython from "./src/pages/video/index2";
+import videoFront from "./src/pages/video/index3"
+import videoSql from "./src/pages/video/index4"
 
 const Stack = createStackNavigator();
 
@@ -36,6 +38,22 @@ export default function App() {
         <Stack.Screen
           name="videoPython"
           component={videoPython}
+          options={{
+            headerLeft: () => null,
+            title: "video",
+          }}
+        />
+        <Stack.Screen
+          name="videoFront"
+          component={videoFront}
+          options={{
+            headerLeft: () => null,
+            title: "video",
+          }}
+        />
+        <Stack.Screen
+          name="videoSql"
+          component={videoSql}
           options={{
             headerLeft: () => null,
             title: "video",

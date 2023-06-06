@@ -1,9 +1,9 @@
 import React from "react";
 import { View, StyleSheet, Linking, Button, Image } from "react-native";
 
-export default function VideoScreen() {
+export default function videoFront() {
   const handleOpenURL = () => {
-    const url = "https://www.youtube.com/watch?v=X8AnVQ-GqLU&t=10s";
+    const url = "https://www.youtube.com/watch?v=Ejkb_YpuHWs&list=PLHz_AreHm4dkZ9-atkcmcBaMZdmLHft8n";
     Linking.openURL(url).catch((err) =>
       console.error("Erro ao abrir o URL:", err)
     );
@@ -13,7 +13,7 @@ export default function VideoScreen() {
     <View style={styles.container}>
       <Image
         style={styles.image}
-        source={require('../img/javaWall.jpeg')}
+        source={require('../img/frontEnd.jpg')}
       />
       <View style={styles.buttonContainer}>
         <Button title="Abrir Video" onPress={handleOpenURL} />
